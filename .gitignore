@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# FastAPI-specific
+instance/
+staticfiles/
+
+# Installed packages
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Logs and debug info
+*.log
+*.out
+*.err
+
+# macOS Finder files
+.DS_Store
+
+# vscode and editor-specific
+.vscode/
+.idea/
+*.swp
+*~
+
+# Other temporary files
+*.bak
+*.tmp
+
+# Ignore fonts.json in case it has sensitive or large data
+fonts.json

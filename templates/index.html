@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Font Explorer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Font Explorer</h1>
+        <form action="/search" method="post" class="search-form">
+            <input type="text" name="query" placeholder="Search fonts by description or category..." value="{{ query if query else '' }}" autocomplete="off">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if fonts %}
+        <div class="fonts-grid">
+            {% for name, details in fonts.items() %}
+            <div class="font-card">
+                <link href="{{ details.google_data.css_link }}" rel="stylesheet">
+                <h2 style="font-family: '{{ name }}';">{{ name }}</h2>
+                <p>{{ details.description }}</p>
+                <p><strong>Category:</strong> {{ details.google_data.category }}</p>
+                <a href="{{ details.google_data.files.regular }}" download>Download Regular</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No fonts found. Try searching with different keywords.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
